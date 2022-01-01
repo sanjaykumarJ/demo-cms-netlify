@@ -1,28 +1,13 @@
-import Head from "next/head";
-import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { fetchEntries } from "utils/contentfulQuery";
+import { Navbar } from "@components/navbar";
+import { HeadComponent } from "@components/head";
 
 export default function Home({ homePageContents }) {
   return (
     <div className="container">
-      <Head>
-        <title>Next Contentful App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header title={"Contentful Next app"} />
-      <ul>
-        <li>
-          <a href={"/"}>Home</a>
-        </li>
-        <li>
-          <a href={"/contact"}>Contact</a>
-        </li>
-        <li>
-          <a href={"/privacy"}>Privacy Policy</a>
-        </li>
-      </ul>
+      <HeadComponent/>
+      <Navbar />
       <main>
         {homePageContents.map((content) => {
           return (
