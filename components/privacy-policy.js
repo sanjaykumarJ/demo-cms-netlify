@@ -2,7 +2,6 @@ const nodeTypeH2 = "heading-2";
 const contentTypeUl = "unordered-list";
 
 export function PrivacyPolicy({ privacyInfo }) {
-  console.log("privacyInfo", privacyInfo);
   const getPolicyTerms = () => {
     return privacyInfo.policyterms;
   };
