@@ -3,7 +3,7 @@ import { fetchEntries } from "utils/contentfulQuery";
 import { Navbar } from "@components/navbar";
 import { HeadComponent } from "@components/head";
 
-export default function Privacy({ privacyInformations }) {
+export default function Privacy({ privacyInformations = [] }) {
   return (
     <>
       <HeadComponent />
