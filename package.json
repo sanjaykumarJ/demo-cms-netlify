@@ -11,7 +11,16 @@
     "contentful": "^9.1.5",
     "next": "^12.0.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "bootstrap": "^4.6.0",
+    "next-images": "^1.7.0",
+    "react-bootstrap": "^1.4.3",
+    "react-countup": "^4.3.3",
+    "react-modal-video": "^1.2.8",
+    "react-scroll": "^1.8.1",
+    "react-visibility-sensor": "^5.1.1",
+    "swiper": "^6.4.6",
+    "typeface-oswald": "^1.1.13"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.0.0"
