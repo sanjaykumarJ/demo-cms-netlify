@@ -1,45 +1,47 @@
-import Footer from "@components/Footer";
-import { fetchEntries } from "utils/contentfulQuery";
-import { Navbar } from "@components/navbar";
-import { HeadComponent } from "@components/head";
+import React from "react";
+import Layout from "@/components/layout";
+import CallToActionOne from "@/components/call-to-action-one";
+import Footer from "@/components/footer";
+import BlogHome from "@/components/blog-home";
+import ParallaxOne from "@/components/parallax-1";
+import ClientCarouselOne from "@/components/client-carousel-one";
+import TeamCarousel from "@/components/team-carousel";
+import FunfactOne from "@/components/funfact-one";
+import TrustedClient from "@/components/trusted-client";
+import PortfolioHome from "@/components/portfolio-home";
+import SubscribeForm from "@/components/subscribe-form";
+import ServiceTwo from "@/components/service-two";
+import AboutTwo from "@/components/about-two";
+import VideoTwo from "@/components/video-two";
+import HeaderOne from "@/components/header-one";
+import SearchContextProvider from "@/context/search-context";
+import MenuContextProvider from "@/context/menu-context";
+import SliderOne from "@/components/slider-one";
 
-export default function Home({ homePageContents = [] }) {
+const HomeOne = () => {
   return (
-    <div className="container">
-      <HeadComponent/>
-      <Navbar />
-      <main>
-        {homePageContents.map((content) => {
-          return (
-            <>
-              <p className="text-overlay">
-                {content?.richText?.content[0]?.content[0]?.value}
-              </p>
-              <img
-                className={"home-page-img"}
-                src={`https:${content?.backgroundImage?.fields?.file.url}`}
-              />
-            </>
-          );
-        })}
-      </main>
-      <Footer />
-    </div>
+    <MenuContextProvider>
+      <SearchContextProvider>
+        <Layout PageTitle="Home One">
+          <HeaderOne />
+          <SliderOne />
+          <ServiceTwo />
+          <AboutTwo />
+          <VideoTwo />
+          <SubscribeForm />
+          <PortfolioHome />
+          <FunfactOne />
+          <TrustedClient />
+          <TeamCarousel />
+          <ClientCarouselOne />
+          <ParallaxOne />
+          <BlogHome />
+          <CallToActionOne extraClassName="ready" />
+          <Footer />
+        </Layout>
+      </SearchContextProvider>
+    </MenuContextProvider>
   );
-}
+};
 
-export async function getStaticProps() {
-  const homePageContentTypeId = "homePageTitle";
-  const res = await fetchEntries(homePageContentTypeId);
-  const homePageContents = res
-    .map((p) => {
-      return p.fields;
-    })
-    .filter((content) => content !== undefined);
-
-  return {
-    props: {
-      homePageContents,
-    },
-  };
-}
+export default HomeOne;

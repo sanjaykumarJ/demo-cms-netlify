@@ -1,40 +1,28 @@
-import { Navbar } from "@components/navbar";
-import { HeadComponent } from "@components/head";
-
-export default function Contact() {
+import React from "react";
+import Footer from "@/components/footer";
+import Layout from "@/components/layout";
+import ContactInfos from "@/components/contact-infos";
+import GoogleMap from "@/components/google-map";
+import ContactForm from "@/components/contact-form";
+import PageBanner from "@/components/page-banner";
+import SearchContextProvider from "context/search-context";
+import MenuContextProvider from "context/menu-context";
+import HeaderOne from "@/components/header-one";
+const ContactPage = () => {
   return (
-    <div className="contact-form">
-      <HeadComponent />
-      <Navbar />
-      <h2>Contact us for your queries!</h2>
-      <form
-        action={`https://submit-form.com/${process.env.NEXT_PUBLIC_FORM_ID}`}
-      >
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name"
-          required=""
-        />
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          required=""
-        />
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Message"
-          required=""
-        ></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <MenuContextProvider>
+      <SearchContextProvider>
+        <Layout PageTitle="Contact Page">
+          <HeaderOne />
+          <PageBanner title="Contact Us" name="Contact" />
+          <ContactForm />
+          <GoogleMap extraClass="contact-page" />
+          <ContactInfos />
+          <Footer />
+        </Layout>
+      </SearchContextProvider>
+    </MenuContextProvider>
   );
-}
+};
+
+export default ContactPage;
