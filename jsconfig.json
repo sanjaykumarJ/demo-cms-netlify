@@ -6,7 +6,7 @@
       "@/components/*": ["components/*"],
       "@/context/*": ["context/*"],
       "@/css/*": ["assets/css/*"],
-      "@/images/*": ["assets/images/*"],
+      "@/images/*": ["assets/images/*"]
     }
   }
 }
