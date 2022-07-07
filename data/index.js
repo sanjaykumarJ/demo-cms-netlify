@@ -91,8 +91,8 @@ import sliderOne02 from "@/images/slider/1_2.jpeg";
 export const SliderOneData = [
   {
     image: sliderOne01,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "SMART WEB \n DESIGN AGENCY.",
+    subTitle: "WELCOME TO MADISSONS",
+    title: "YOUR NEED IS OUR \n STRIVE",
     button: {
       label: "DISCOVER MORE",
       url: "/about"
@@ -100,8 +100,8 @@ export const SliderOneData = [
   },
   {
     image: sliderOne02,
-    subTitle: "WELCOME TO MEIPALY AGENCY",
-    title: "SMART WEB \n DESIGN AGENCY.",
+    subTitle: "WELCOME TO MADISSONS",
+    title: "ROBUST MBC BODIES",
     button: {
       label: "DISCOVER MORE",
       url: "/about"
